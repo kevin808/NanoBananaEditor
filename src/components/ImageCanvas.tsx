@@ -198,7 +198,7 @@ export const ImageCanvas: React.FC = () => {
             {selectedTool === 'mask' && (
               <>
                 <div className="flex items-center space-x-2 mr-2">
-                  <span className="text-xs text-gray-400">Brush:</span>
+                  <span className="text-xs text-gray-400">画笔:</span>
                   <input
                     type="range"
                     min="5"
@@ -227,13 +227,13 @@ export const ImageCanvas: React.FC = () => {
               className={cn(showMasks && 'bg-yellow-400/10 border-yellow-400/50')}
             >
               {showMasks ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
-              <span className="hidden sm:inline ml-2">Masks</span>
+              <span className="hidden sm:inline ml-2">蒙版</span>
             </Button>
             
             {canvasImage && (
               <Button variant="secondary" size="sm" onClick={handleDownload}>
                 <Download className="h-4 w-4 mr-2" />
-                <span className="hidden sm:inline">Download</span>
+                <span className="hidden sm:inline">下载</span>
               </Button>
             )}
           </div>
@@ -250,12 +250,12 @@ export const ImageCanvas: React.FC = () => {
             <div className="text-center">
               <div className="text-6xl mb-4">🍌</div>
               <h2 className="text-xl font-medium text-gray-300 mb-2">
-                Welcome to Nano Banana Framework
+                欢迎使用 Nano Banana 框架
               </h2>
               <p className="text-gray-500 max-w-md">
                 {selectedTool === 'generate' 
-                  ? 'Start by describing what you want to create in the prompt box'
-                  : 'Upload an image to begin editing'
+                  ? '首先在提示框中描述您想要创建的内容'
+                  : '上传图像开始编辑'
                 }
               </p>
             </div>
@@ -266,7 +266,7 @@ export const ImageCanvas: React.FC = () => {
           <div className="absolute inset-0 flex items-center justify-center bg-gray-900/50">
             <div className="text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-400 mb-4" />
-              <p className="text-gray-300">Creating your image...</p>
+              <p className="text-gray-300">正在创建您的图像...</p>
             </div>
           </div>
         )}
@@ -343,7 +343,7 @@ export const ImageCanvas: React.FC = () => {
         <div className="flex items-center justify-between text-xs text-gray-500">
           <div className="flex items-center space-x-4">
             {brushStrokes.length > 0 && (
-              <span className="text-yellow-400">{brushStrokes.length} brush stroke{brushStrokes.length !== 1 ? 's' : ''}</span>
+              <span className="text-yellow-400">{brushStrokes.length} 笔划</span>
             )}
           </div>
           
@@ -356,12 +356,12 @@ export const ImageCanvas: React.FC = () => {
                 rel="noopener noreferrer"
                 className="text-yellow-400 hover:text-yellow-300 transition-colors ml-1"
               >
-                Reinventing.AI Solutions
+                Reinventing.AI 解决方案
               </a>
             </span>
             <span className="text-gray-600 hidden md:inline">•</span>
             <span className="text-yellow-400 hidden md:inline">⚡</span>
-            <span className="hidden md:inline">Powered by Gemini 2.5 Flash Image</span>
+            <span className="hidden md:inline">由 Gemini 2.5 Flash Image 提供支持</span>
           </div>
         </div>
       </div>

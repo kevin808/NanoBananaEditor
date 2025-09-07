@@ -13,10 +13,10 @@ export const Header: React.FC = () => {
           <div className="flex items-center space-x-2">
             <div className="text-2xl">🍌</div>
             <h1 className="text-xl font-semibold text-gray-100 hidden md:block">
-              Nano Banana AI Image Editor
+              Nano Banana AI 图像编辑器
             </h1>
             <h1 className="text-xl font-semibold text-gray-100 md:hidden">
-              NB Editor
+              NB 编辑器
             </h1>
           </div>
           <div className="text-xs text-gray-500 bg-gray-800 px-2 py-1 rounded">

@@ -55,7 +55,7 @@ export const HistoryPanel: React.FC = () => {
         <button
           onClick={() => setShowHistory(true)}
           className="w-6 h-16 bg-gray-800 hover:bg-gray-700 rounded-l-lg border border-r-0 border-gray-700 flex items-center justify-center transition-colors group"
-          title="Show History Panel"
+          title="显示历史记录面板"
         >
           <div className="flex flex-col space-y-1">
             <div className="w-1 h-1 bg-gray-500 group-hover:bg-gray-400 rounded-full"></div>
@@ -73,14 +73,14 @@ export const HistoryPanel: React.FC = () => {
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center space-x-2">
           <History className="h-5 w-5 text-gray-400" />
-          <h3 className="text-sm font-medium text-gray-300">History & Variants</h3>
+          <h3 className="text-sm font-medium text-gray-300">历史记录和变体</h3>
         </div>
         <Button
           variant="ghost"
           size="icon"
           onClick={() => setShowHistory(!showHistory)}
           className="h-6 w-6"
-          title="Hide History Panel"
+          title="隐藏历史记录面板"
         >
           ×
         </Button>
@@ -88,11 +88,11 @@ export const HistoryPanel: React.FC = () => {
 
       {/* Variants Grid */}
       <div className="mb-6 flex-shrink-0">
-        <h4 className="text-xs font-medium text-gray-400 mb-3">Current Variants</h4>
+        <h4 className="text-xs font-medium text-gray-400 mb-3">当前变体</h4>
         {generations.length === 0 && edits.length === 0 ? (
           <div className="text-center py-8">
             <div className="text-4xl mb-2">🖼️</div>
-            <p className="text-sm text-gray-500">No generations yet</p>
+            <p className="text-sm text-gray-500">尚无生成历史</p>
           </div>
         ) : (
           <div className="grid grid-cols-2 gap-3">
@@ -117,7 +117,7 @@ export const HistoryPanel: React.FC = () => {
                   <>
                     <img
                       src={generation.outputAssets[0].url}
-                      alt="Generated variant"
+                      alt="生成的变体"
                       className="w-full h-full object-cover"
                     />
                   </>
@@ -155,7 +155,7 @@ export const HistoryPanel: React.FC = () => {
                 {edit.outputAssets[0] ? (
                   <img
                     src={edit.outputAssets[0].url}
-                    alt="Edited variant"
+                    alt="编辑过的变体"
                     className="w-full h-full object-cover"
                   />
                 ) : (
@@ -166,7 +166,7 @@ export const HistoryPanel: React.FC = () => {
                 
                 {/* Edit Label */}
                 <div className="absolute top-2 left-2 bg-purple-900/80 text-xs px-2 py-1 rounded">
-                  Edit #{index + 1}
+                  编辑 #{index + 1}
                 </div>
               </div>
             ))}
@@ -177,16 +177,16 @@ export const HistoryPanel: React.FC = () => {
       {/* Current Image Info */}
       {(canvasImage || imageDimensions) && (
         <div className="mb-4 p-3 bg-gray-900 rounded-lg border border-gray-700">
-          <h4 className="text-xs font-medium text-gray-400 mb-2">Current Image</h4>
+          <h4 className="text-xs font-medium text-gray-400 mb-2">当前图像</h4>
           <div className="space-y-1 text-xs text-gray-500">
             {imageDimensions && (
               <div className="flex justify-between">
-                <span>Dimensions:</span>
+                <span>尺寸:</span>
                 <span className="text-gray-300">{imageDimensions.width} × {imageDimensions.height}</span>
               </div>
             )}
             <div className="flex justify-between">
-              <span>Mode:</span>
+              <span>模式:</span>
               <span className="text-gray-300 capitalize">{selectedTool}</span>
             </div>
           </div>
@@ -195,7 +195,7 @@ export const HistoryPanel: React.FC = () => {
 
       {/* Generation Details */}
       <div className="mb-6 p-4 bg-gray-900 rounded-lg border border-gray-700 flex-1 overflow-y-auto min-h-0">
-        <h4 className="text-xs font-medium text-gray-400 mb-2">Generation Details</h4>
+        <h4 className="text-xs font-medium text-gray-400 mb-2">生成详细信息</h4>
         {(() => {
           const gen = generations.find(g => g.id === selectedGenerationId);
           const selectedEdit = edits.find(e => e.id === selectedEditId);
@@ -205,16 +205,16 @@ export const HistoryPanel: React.FC = () => {
               <div className="space-y-3">
                 <div className="space-y-2 text-xs text-gray-500">
                   <div>
-                    <span className="text-gray-400">Prompt:</span>
+                    <span className="text-gray-400">提示:</span>
                     <p className="text-gray-300 mt-1">{gen.prompt}</p>
                   </div>
                   <div className="flex justify-between">
-                    <span>Model:</span>
+                    <span>模型:</span>
                     <span>{gen.modelVersion}</span>
                   </div>
                   {gen.parameters.seed && (
                     <div className="flex justify-between">
-                      <span>Seed:</span>
+                      <span>种子:</span>
                       <span>{gen.parameters.seed}</span>
                     </div>
                   )}
@@ -223,7 +223,7 @@ export const HistoryPanel: React.FC = () => {
                 {/* Reference Images */}
                 {gen.sourceAssets.length > 0 && (
                   <div>
-                    <h5 className="text-xs font-medium text-gray-400 mb-2">Reference Images</h5>
+                    <h5 className="text-xs font-medium text-gray-400 mb-2">参考图像</h5>
                     <div className="grid grid-cols-2 gap-2">
                       {gen.sourceAssets.map((asset, index) => (
                         <button
@@ -231,21 +231,21 @@ export const HistoryPanel: React.FC = () => {
                           onClick={() => setPreviewModal({
                             open: true,
                             imageUrl: asset.url,
-                            title: `Reference Image ${index + 1}`,
-                            description: 'This reference image was used to guide the generation'
+                            title: `参考图像 ${index + 1}`,
+                            description: '此参考图像用于指导生成'
                           })}
                           className="relative aspect-square rounded border border-gray-700 hover:border-gray-600 transition-colors overflow-hidden group"
                         >
                           <img
                             src={asset.url}
-                            alt={`Reference ${index + 1}`}
+                            alt={`参考 ${index + 1}`}
                             className="w-full h-full object-cover"
                           />
                           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
                             <ImageIcon className="h-4 w-4 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
                           </div>
                           <div className="absolute bottom-1 left-1 bg-gray-900/80 text-xs px-1 py-0.5 rounded text-gray-300">
-                            Ref {index + 1}
+                            参考 {index + 1}
                           </div>
                         </button>
                       ))}
@@ -260,21 +260,21 @@ export const HistoryPanel: React.FC = () => {
               <div className="space-y-3">
                 <div className="space-y-2 text-xs text-gray-500">
                   <div>
-                    <span className="text-gray-400">Edit Instruction:</span>
+                    <span className="text-gray-400">编辑说明:</span>
                     <p className="text-gray-300 mt-1">{selectedEdit.instruction}</p>
                   </div>
                   <div className="flex justify-between">
-                    <span>Type:</span>
-                    <span>Image Edit</span>
+                    <span>类型:</span>
+                    <span>图像编辑</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Created:</span>
+                    <span>创建于:</span>
                     <span>{new Date(selectedEdit.timestamp).toLocaleTimeString()}</span>
                   </div>
                   {selectedEdit.maskAssetId && (
                     <div className="flex justify-between">
-                      <span>Mask:</span>
-                      <span className="text-purple-400">Applied</span>
+                      <span>蒙版:</span>
+                      <span className="text-purple-400">已应用</span>
                     </div>
                   )}
                 </div>
@@ -282,19 +282,19 @@ export const HistoryPanel: React.FC = () => {
                 {/* Parent Generation Reference */}
                 {parentGen && (
                   <div>
-                    <h5 className="text-xs font-medium text-gray-400 mb-2">Original Image</h5>
+                    <h5 className="text-xs font-medium text-gray-400 mb-2">原始图像</h5>
                     <button
                       onClick={() => setPreviewModal({
                         open: true,
                         imageUrl: parentGen.outputAssets[0]?.url || '',
-                        title: 'Original Image',
-                        description: 'The base image that was edited'
+                        title: '原始图像',
+                        description: '被编辑的基础图像'
                       })}
                       className="relative aspect-square w-16 rounded border border-gray-700 hover:border-gray-600 transition-colors overflow-hidden group"
                     >
                       <img
                         src={parentGen.outputAssets[0]?.url}
-                        alt="Original"
+                        alt="原始"
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -307,13 +307,13 @@ export const HistoryPanel: React.FC = () => {
                 {/* Mask Visualization */}
                 {selectedEdit.maskReferenceAsset && (
                   <div>
-                    <h5 className="text-xs font-medium text-gray-400 mb-2">Masked Reference</h5>
+                    <h5 className="text-xs font-medium text-gray-400 mb-2">蒙版参考</h5>
                     <button
                       onClick={() => setPreviewModal({
                         open: true,
                         imageUrl: selectedEdit.maskReferenceAsset!.url,
-                        title: 'Masked Reference Image',
-                        description: 'This image with mask overlay was sent to the AI model to guide the edit'
+                        title: '蒙版参考图像',
+                        description: '此带有蒙版叠加的图像已发送到 AI 模型以指导编辑'
                       })}
                       className="relative aspect-square w-16 rounded border border-gray-700 hover:border-gray-600 transition-colors overflow-hidden group"
                     >
@@ -326,7 +326,7 @@ export const HistoryPanel: React.FC = () => {
                         <ImageIcon className="h-3 w-3 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
                       </div>
                       <div className="absolute bottom-1 left-1 bg-purple-900/80 text-xs px-1 py-0.5 rounded text-purple-300">
-                        Mask
+                        蒙版
                       </div>
                     </button>
                   </div>
@@ -336,7 +336,7 @@ export const HistoryPanel: React.FC = () => {
           } else {
             return (
               <div className="space-y-2 text-xs text-gray-500">
-                <p className="text-gray-400">Select a generation or edit to view details</p>
+                <p className="text-gray-400">选择一个生成或编辑以查看详细信息</p>
               </div>
             );
           }
@@ -391,7 +391,7 @@ export const HistoryPanel: React.FC = () => {
           disabled={!selectedGenerationId && !useAppStore.getState().canvasImage}
         >
           <Download className="h-4 w-4 mr-2" />
-          Download
+          下载
         </Button>
       </div>
       

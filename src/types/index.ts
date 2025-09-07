@@ -61,7 +61,7 @@ export interface BrushStroke {
 }
 
 export interface PromptHint {
-  category: 'subject' | 'scene' | 'action' | 'style' | 'camera';
+  category: '主题' | '场景' | '动作' | '风格' | '相机';
   text: string;
   example: string;
 }

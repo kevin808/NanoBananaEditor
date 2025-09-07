@@ -6,38 +6,38 @@ import { Button } from './ui/Button';
 
 const promptHints: PromptHint[] = [
   {
-    category: 'subject',
-    text: 'Be specific about the main subject',
-    example: '"A vintage red bicycle" vs "bicycle"'
+    category: '主题',
+    text: '具体说明主要主题',
+    example: '“一辆复古红色自行车” vs “自行车”'
   },
   {
-    category: 'scene',
-    text: 'Describe the environment and setting',
-    example: '"in a cobblestone alley during golden hour"'
+    category: '场景',
+    text: '描述环境和背景',
+    example: '“在黄金时段的鹅卵石小巷里”'
   },
   {
-    category: 'action',
-    text: 'Include movement or activity',
-    example: '"cyclist pedaling through puddles"'
+    category: '动作',
+    text: '包括运动或活动',
+    example: '“骑自行车的人在水坑里踩水”'
   },
   {
-    category: 'style',
-    text: 'Specify artistic style or mood',
-    example: '"cinematic photography, moody lighting"'
+    category: '风格',
+    text: '指定艺术风或情绪',
+    example: '“电影摄影，喜怒无常的灯光”'
   },
   {
-    category: 'camera',
-    text: 'Add camera perspective details',
-    example: '"shot with 85mm lens, shallow depth of field"'
+    category: '相机',
+    text: '添加相机视角细节',
+    example: '“使用 85mm 镜头拍摄，景深较浅”'
   }
 ];
 
 const categoryColors = {
-  subject: 'bg-blue-500/10 border-blue-500/30 text-blue-400',
-  scene: 'bg-green-500/10 border-green-500/30 text-green-400',
-  action: 'bg-purple-500/10 border-purple-500/30 text-purple-400',
-  style: 'bg-orange-500/10 border-orange-500/30 text-orange-400',
-  camera: 'bg-pink-500/10 border-pink-500/30 text-pink-400',
+  '主题': 'bg-blue-500/10 border-blue-500/30 text-blue-400',
+  '场景': 'bg-green-500/10 border-green-500/30 text-green-400',
+  '动作': 'bg-purple-500/10 border-purple-500/30 text-purple-400',
+  '风格': 'bg-orange-500/10 border-orange-500/30 text-orange-400',
+  '相机': 'bg-pink-500/10 border-pink-500/30 text-pink-400',
 };
 
 interface PromptHintsProps {
@@ -53,7 +53,7 @@ export const PromptHints: React.FC<PromptHintsProps> = ({ open, onOpenChange }) 
         <Dialog.Content className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-900 border border-gray-700 rounded-lg p-6 w-full max-w-md max-h-[80vh] overflow-y-auto z-50">
           <div className="flex items-center justify-between mb-4">
             <Dialog.Title className="text-lg font-semibold text-gray-100">
-              Prompt Quality Tips
+              提示质量技巧
             </Dialog.Title>
             <Dialog.Close asChild>
               <Button variant="ghost" size="icon" className="h-6 w-6">
@@ -75,8 +75,7 @@ export const PromptHints: React.FC<PromptHintsProps> = ({ open, onOpenChange }) 
             
             <div className="p-4 bg-gray-800 rounded-lg border border-gray-700 mt-6">
               <p className="text-sm text-gray-300">
-                <strong className="text-yellow-400">Best practice:</strong> Write full sentences that describe the complete scene, 
-                not just keywords. Think "paint me a picture with words."
+                <strong className="text-yellow-400">最佳实践:</strong> 写出完整的句子来描述整个场景，而不仅仅是关键词。把它想象成“用语言为我画一幅画”。
               </p>
             </div>
           </div>
