@@ -136,6 +136,7 @@ export const ImageCanvas: React.FC = () => {
       id: `stroke-${Date.now()}`,
       points: currentStroke,
       brushSize,
+      color: "#A855F7"
     });
     setCurrentStroke([]);
   };
@@ -349,7 +350,7 @@ export const ImageCanvas: React.FC = () => {
           
           <div className="flex items-center space-x-2">
             <span className="text-xs text-gray-500">
-              © 2025 Big thanks to Mark Fulton - 
+              © 2025 Big thanks to Mark Fulton
             </span>
             <span className="text-gray-600 hidden md:inline">•</span>
             <span className="text-yellow-400 hidden md:inline">⚡</span>
