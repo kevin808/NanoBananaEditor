@@ -28,7 +28,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({ open, onOpenChange }) => {
           <div className="space-y-4">
             <div className="space-y-3 text-sm text-gray-300">
               <p>
-                由{' '}
+                感谢原作者{' '}
                 <a
                   href="https://markfulton.com"
                   target="_blank"
@@ -49,15 +49,15 @@ export const InfoModal: React.FC<InfoModalProps> = ({ open, onOpenChange }) => {
                     </h4>
                   </div>
                   <p className="text-sm text-gray-300 mb-4">
-                    学习像这样编写应用程序，掌握 AI 自动化，构建智能代理，并创建能够推动实际业务成果的尖端解决方案。
+                    立即加入社区，学习并掌握 AI 自动化，构建智能代理。
                   </p>
                   <a
-                    href="https://www.reinventing.ai/"
+                    href="https://thinkinai.xyz/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-lg transition-all duration-200 font-medium"
                   >
-                    加入AI加速器计划
+                    加入ThinkInAI社区
                     <ExternalLink className="h-4 w-4 ml-1" />
                   </a>
                 </div>
@@ -66,19 +66,19 @@ export const InfoModal: React.FC<InfoModalProps> = ({ open, onOpenChange }) => {
                   <div className="flex items-center mb-3">
                     <Download className="h-5 w-5 text-yellow-400 mr-2" />
                     <h4 className="text-sm font-semibold text-yellow-300">
-                      获取此应用的副本
+                      获取源代码
                     </h4>
                   </div>
                   <p className="text-sm text-gray-300 mb-4">
-                    通过加入 Vibe Coding is Life Skool 社区获取此应用的副本。在网络上最好的 vibe 编码社区中，可以参与实时构建会话、应用项目、资源等。
+                    这是Kevin基于原作者代码进行翻译的项目。
                   </p>
                   <a
-                    href="https://www.skool.com/vibe-coding-is-life/about?ref=456537abaf37491cbcc6976f3c26af41"
+                    href="https://github.com/kevin808/NanoBananaEditor"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-yellow-600 to-orange-600 hover:from-yellow-500 hover:to-orange-500 text-white rounded-lg transition-all duration-200 font-medium"
                   >
-                    加入Vibe Coding is Life社区
+                    查看源代码
                     <ExternalLink className="h-4 w-4 ml-1" />
                   </a>
                 </div>
